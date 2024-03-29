@@ -3,6 +3,7 @@ package com.example.ni_escobar;
 import java.util.ArrayList;
 
 public class Jogador {
+    public String nome;
     public int hp = 100;
     public ArrayList<Item> equipamentos = new ArrayList<>();
 
