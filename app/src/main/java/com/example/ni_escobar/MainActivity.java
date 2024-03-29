@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,13 +18,24 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     int itemEscolhido, itemVilao,itemHeroi;
-    int[] modificador = new int[]{4,3,2,2,4};
+
+
     private TextView txtTeste;
     ArrayList<Item> listaItems = new ArrayList<Item>();
     ArrayList<ImageView> listaImagensHeroi, listaImagensVilao;
     Random rnd = new Random();
-    String[] nomes = new String[]{"Espada","Escudo", "Guarda-Chuva", "Pedra", "Armadura"};
-    String[] status = new String[]{"ATK", "HP", "ATK","ATK", "HP"};
+
+    int[] idIcons = new int[]{
+            R.drawable.croissant,
+            R.drawable.extintor,
+            R.drawable.guarda_chuva,
+            R.drawable.ovo_frito,
+            R.drawable.serra,
+            R.drawable.talheres};
+    String[] nomes = new String[]{"Croissant","Extintor", "Guarda-Chuva", "Ovo frito", "Serra", "Talheres"};
+    String[] status = new String[]{"HP", "ATK", "ATK","HP", "ATK", "ATK"};
+    int[] modificador = new int[]{  5,  5,  3,  10,  4, 3};
+
     ProgressBar pbHeroi, pbVilao;
     Jogador heroi, vilao;
     ConstraintLayout container;
@@ -49,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         //popula a lista de itens
         for(int i = 0; i < nomes.length;i++){
 
-            Item item = new Item(nomes[i], status[i],modificador[i]);
+            Item item = new Item(nomes[i], status[i],modificador[i], idIcons[i]);
             System.out.println(item.nome);
             listaItems.add(item);
         }
@@ -73,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     private void turnoVilao(){
         int acao =rnd.nextInt(2);
         //atacar
-        if(acao == 0){
+        if(acao == 0 || itemVilao >= 6){
             atacar(vilao, heroi);
             pbHeroi.setProgress(heroi.hp);
             if(heroi.hp <= 0){
@@ -81,9 +91,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         //equipar
-        else if(acao == 1){
-            vilao.equiparItem(listaItems.get(rnd.nextInt(listaItems.size())));
-            revelarIcon(vilao);
+        else if(acao == 1 && itemVilao < 6){
+            Item item = listaItems.get(rnd.nextInt(listaItems.size()));
+            vilao.equiparItem(item);
+            revelarIcon(vilao, item);
         }
     }
     public void alert(String titulo){
@@ -98,10 +109,11 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alert = ganhou.create();
         alert.show();
     }
-    public void revelarIcon(Jogador jogador){
+    public void revelarIcon(Jogador jogador, Item item){
         if(jogador.nome.equals("heroi")){
             for(ImageView img : listaImagensHeroi){
                 if (getResources().getResourceName(img.getId()).equals("com.example.ni_escobar:id/imgItemHeroi" + itemHeroi)){
+                    img.setImageResource(item.icon);
                     img.setVisibility(View.VISIBLE);
                 };
             }
@@ -110,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             for(ImageView img : listaImagensVilao){
                 System.out.println(getResources().getResourceName(img.getId()));
                 if (getResources().getResourceName(img.getId()).equals("com.example.ni_escobar:id/imgItemVilao" + itemVilao)){
+                    img.setImageResource(item.icon);
                     img.setVisibility(View.VISIBLE);
                 };
             }
@@ -144,18 +157,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void arsenalAleatorio(View view){
-        int[] numerosSorteados = {-1,-1,-1,-1,-1};
+        if(itemHeroi < 6 ){
+            int[] numerosSorteados = {-1,-1,-1,-1,-1};
 
-        for(int i = 0;i< numerosSorteados.length;){
-            int numero = rnd.nextInt(listaItems.size());
+            for(int i = 0;i< numerosSorteados.length;){
+                int numero = rnd.nextInt(listaItems.size());
 
-            if(!foiSorteado(numero,numerosSorteados)){
-                numerosSorteados[i] = numero;
-                i++;
+                if(!foiSorteado(numero,numerosSorteados)){
+                    numerosSorteados[i] = numero;
+                    i++;
+                }
             }
+            mostrarArsenal(numerosSorteados);
+
         }
-        mostrarArsenal(numerosSorteados);
-        turnoVilao();
+
     }
     private void mostrarArsenal(int[] lista){
         itemEscolhido = -1;
@@ -178,7 +194,8 @@ public class MainActivity extends AppCompatActivity {
                 if(itemEscolhido != -1){
                     Toast.makeText(MainActivity.this, descricaoItem(lista,itemEscolhido), Toast.LENGTH_SHORT).show();
                     heroi.equiparItem(listaItems.get(lista[itemEscolhido]));
-                    revelarIcon(heroi);
+                    revelarIcon(heroi, listaItems.get(lista[itemEscolhido]));
+                    turnoVilao();
                 }
             }
         });
