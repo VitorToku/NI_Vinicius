@@ -6,14 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/campo">
 
     <ImageView
         android:id="@+id/imgItemVilao5"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="9dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgItemVilao4"
@@ -24,9 +25,10 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="11dp"
         android:text="Equipamentos"
+        android:textColor="#F4F3F3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtVidaVilao" />
 
@@ -34,7 +36,7 @@
         android:id="@+id/imgItemVilao4"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toEndOf="@+id/imgItemVilao3"
         app:layout_constraintTop_toBottomOf="@+id/txtVidaVilao"
@@ -55,9 +57,9 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/txtVidaVilao"
+        app:layout_constraintTop_toTopOf="@+id/txtVidaVilao"
         app:srcCompat="@drawable/baseline_directions_bike_24" />
 
     <ImageView
@@ -75,45 +77,49 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.031"
         app:layout_constraintStart_toEndOf="@+id/imgItemHeroi4"
-        app:layout_constraintTop_toBottomOf="@+id/txtTeste"
+        app:layout_constraintTop_toBottomOf="@+id/pbHeroi"
         app:srcCompat="@drawable/baseline_directions_bike_24" />
 
     <ImageView
         android:id="@+id/imgItemHeroi4"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toEndOf="@+id/imgItemHeroi3"
-        app:layout_constraintTop_toBottomOf="@+id/txtTeste"
+        app:layout_constraintTop_toBottomOf="@+id/pbHeroi"
         app:srcCompat="@drawable/baseline_directions_bike_24" />
 
     <TextView
         android:id="@+id/txtTeste"
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
+        android:layout_width="46dp"
+        android:layout_height="18dp"
         android:layout_marginStart="20dp"
         android:text="Herói"
+        android:textColor="#F3EEEE"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.645" />
 
     <TextView
         android:id="@+id/txtVidaVilao"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="100dp"
         android:text="Vilão"
+        android:textColor="#EFE7E7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/pbHeroi"
@@ -121,35 +127,37 @@
         android:layout_width="0dp"
         android:layout_height="12dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTeste" />
 
     <Button
         android:id="@+id/btnEquipar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="155dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="40dp"
         android:onClick="arsenalAleatorio"
         android:text="Equipar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnAtacar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="155dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="40dp"
         android:onClick="btnAtacar"
         android:text="Atacar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEquipar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toEndOf="@+id/btnEquipar" />
 
     <ProgressBar
         android:id="@+id/pbVilao"
@@ -159,7 +167,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -168,10 +176,10 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:visibility="visible"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/txtTeste"
+        app:layout_constraintTop_toBottomOf="@+id/pbHeroi"
         app:srcCompat="@drawable/baseline_directions_bike_24" />
 
     <ImageView
@@ -179,9 +187,9 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toEndOf="@+id/imgItemHeroi1"
-        app:layout_constraintTop_toBottomOf="@+id/txtTeste"
+        app:layout_constraintTop_toBottomOf="@+id/pbHeroi"
         app:srcCompat="@drawable/baseline_directions_bike_24" />
 
     <ImageView
@@ -189,30 +197,32 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toEndOf="@+id/imgItemHeroi2"
-        app:layout_constraintTop_toBottomOf="@+id/txtTeste"
+        app:layout_constraintTop_toBottomOf="@+id/pbHeroi"
         app:srcCompat="@drawable/baseline_directions_bike_24" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
         android:text="Equipamentos"
+        android:textColor="#EAE4E4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTeste" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:text="HP"
+        android:textColor="#F1EDED"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTeste" />
 
     <TextView
         android:id="@+id/textView4"
@@ -221,7 +231,29 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:text="HP"
+        android:textColor="#ECE6E6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="76dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgItemVilao3"
+        app:srcCompat="@drawable/vilao" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/pbHeroi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.344"
+        app:layout_constraintStart_toEndOf="@+id/txtTeste"
+        app:srcCompat="@drawable/heroi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

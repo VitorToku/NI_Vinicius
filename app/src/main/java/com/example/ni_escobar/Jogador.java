@@ -12,11 +12,15 @@ public class Jogador {
         if(item.status.equals("HP")){
             this.hp += item.modificador;
         }
+
+
     }
     public void atacar(Jogador inimigo){
         inimigo.hp-= this.valorAtaque();
 
     }
+
+
     public int valorAtaque(){
         int ataque = 0;
         for(Item item: this.equipamentos){

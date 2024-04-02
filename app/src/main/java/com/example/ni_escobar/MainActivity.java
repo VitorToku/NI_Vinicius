@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -31,10 +33,17 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.guarda_chuva,
             R.drawable.ovo_frito,
             R.drawable.serra,
-            R.drawable.talheres};
-    String[] nomes = new String[]{"Croissant","Extintor", "Guarda-Chuva", "Ovo frito", "Serra", "Talheres"};
-    String[] status = new String[]{"HP", "ATK", "ATK","HP", "ATK", "ATK"};
-    int[] modificador = new int[]{  5,  5,  3,  10,  4, 3};
+            R.drawable.talheres,
+            R.drawable.pri_socorros,
+            R.drawable.ancora,
+            R.drawable.snowmobile,
+            R.drawable.crianca,
+            R.drawable.doente,
+            R.drawable.fitness};
+    String[] nomes = new String[]{"Croissant","Extintor", "Guarda-Chuva", "Ovo frito", "Serra",
+            "Talheres", "Pri.Socorros", "Ancora", "Snowmobile", "Criança", "Doente", "Fitness"};
+    String[] status = new String[]{"HP", "ATK", "ATK","HP", "ATK", "ATK", "HP", "ATK", "ATK", "ATK", "HP","ATK"};
+    int[] modificador = new int[]{  5,  5,  3,  10,  4, 3, 20, 15,  12, 8, -5, 10};
 
     ProgressBar pbHeroi, pbVilao;
     Jogador heroi, vilao;
@@ -43,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         txtTeste = findViewById(R.id.txtTeste);
@@ -65,8 +76,6 @@ public class MainActivity extends AppCompatActivity {
         }
         //set a vida inicial do herói e do vilão
         resetar();
-
-
     }
 
     public void btnAtacar(View view){
@@ -83,11 +92,12 @@ public class MainActivity extends AppCompatActivity {
     private void turnoVilao(){
         int acao =rnd.nextInt(2);
         //atacar
-        if(acao == 0 || itemVilao >= 6){
+        if(acao == 0){
             atacar(vilao, heroi);
             pbHeroi.setProgress(heroi.hp);
             if(heroi.hp <= 0){
                 alert("Perdeu");
+
             }
         }
         //equipar
@@ -128,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
             }
             itemVilao++;
         }
-
 
     }
     public void resetar(){

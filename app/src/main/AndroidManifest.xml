@@ -12,7 +12,13 @@
         android:theme="@style/Theme.NI_Escobar"
         tools:targetApi="31">
         <activity
+            android:name=".DeveloperActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InicioActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
