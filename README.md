@@ -15,3 +15,7 @@ OBS: Este jogo foi desenvolvido para um celular Pixel 5, então podem ter proble
 &nbsp; &nbsp; &nbsp; &nbsp;
   <img alt="Escolha do arsenal" src="https://github.com/VitorToku/NI_Vinicius/blob/main/img/Screenshot_20240404_102730.png" width="45%">
 </p>
+
+## Autores
+<a href="https://www.linkedin.com/in/vitor-tokunaga-82b344278">Vitor Hideki Tokunaga</a>
+<a href="https://www.linkedin.com/in/alexsander-sudario-0a793524a">Alexsander Sudario</a>
