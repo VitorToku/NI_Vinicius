@@ -11,4 +11,4 @@ OBS: Este jogo foi desenvolvido para um celular Pixel 5, então podem ter proble
 
 ## Imagens
 <img src="https://github.com/VitorToku/NI_Vinicius/blob/main/img/Screenshot_20240404_102659.png" height=auto width=50%/>
-![Escolha de arsenal](https://github.com/VitorToku/NI_Vinicius/blob/main/img/Screenshot_20240404_102730.png?raw=true){:height="200px" width="400px"}
+<img src="https://github.com/VitorToku/NI_Vinicius/blob/main/img/Screenshot_20240404_102730.png" height=auto width=50%/>
