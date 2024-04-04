@@ -11,3 +11,4 @@ OBS: Este jogo foi desenvolvido para um celular Pixel 5, então podem ter proble
 
 ## Imagens
 ![Tela de combate](https://github.com/VitorToku/NI_Vinicius/blob/main/img/Screenshot_20240404_102659.png?raw=true)
+![Escolha de arsenal](https://github.com/VitorToku/NI_Vinicius/blob/main/img/Screenshot_20240404_102730.png?raw=true)
