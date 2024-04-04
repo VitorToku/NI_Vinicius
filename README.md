@@ -10,5 +10,8 @@ Procure pelo arquivo "dungeonBattle.apk", baixe no seu dispositivo Android e ins
 OBS: Este jogo foi desenvolvido para um celular Pixel 5, então podem ter problemas relacionados a resolução da tela.
 
 ## Imagens
-<img src="https://github.com/VitorToku/NI_Vinicius/blob/main/img/Screenshot_20240404_102659.png" height=auto width=40% layout=flex/>
-<img src="https://github.com/VitorToku/NI_Vinicius/blob/main/img/Screenshot_20240404_102730.png" height=auto width=40% layout=flex/>
+<p align="center">
+  <img alt="Tela de combate" src="https://github.com/VitorToku/NI_Vinicius/blob/main/img/Screenshot_20240404_102659.png" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="Escolha do arsenal" src="https://github.com/VitorToku/NI_Vinicius/blob/main/img/Screenshot_20240404_102730.png" width="45%">
+</p>
