@@ -17,5 +17,5 @@ OBS: Este jogo foi desenvolvido para um celular Pixel 5, então podem ter proble
 </p>
 
 ## Autores
-<a href="https://www.linkedin.com/in/vitor-tokunaga-82b344278">Vitor Hideki Tokunaga</a>
+<a href="https://www.linkedin.com/in/vitor-tokunaga-82b344278">Vitor Hideki Tokunaga</a> <br>
 <a href="https://www.linkedin.com/in/alexsander-sudario-0a793524a">Alexsander Sudario</a>
